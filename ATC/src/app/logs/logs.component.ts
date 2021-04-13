@@ -1,26 +1,27 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+
 declare var $:any;
 
 @Component({
-  selector: 'app-fa',
-  templateUrl: './fa.component.html',
-  styleUrls: ['./fa.component.scss']
+  selector: 'app-logs',
+  templateUrl: './logs.component.html',
+  styleUrls: ['./logs.component.scss']
 })
-export class FaComponent implements OnInit {
+export class LogsComponent implements OnInit {
 
-  FA: any;
+  Logs: any;
   table:any;
   constructor(private ref: ChangeDetectorRef) { }
 
   ngOnInit() {
     
-    fetch('http://localhost:3000/api/flights/parked').then(res => res.json()).then(doc => {
+    fetch('http://localhost:3000/api/flights/Logs').then(res => res.json()).then(doc => {
       if(doc.status){
-        this.FA = doc.response;
+        this.Logs = doc.response;
         this.ref.detectChanges();
 
-        this.table = $('#example1').DataTable({
+        this.table = $('#example2').DataTable({
           pageLength: 10,
           lengthChange: false,
 
@@ -28,4 +29,5 @@ export class FaComponent implements OnInit {
       }
     })
   }
+
 }

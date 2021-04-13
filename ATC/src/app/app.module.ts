@@ -13,7 +13,8 @@ import { FYAComponent } from './FYA/FYA.component';
 import { AirportsComponent } from './airports/airports.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { FaComponent } from './fa/fa.component'
+import { FaComponent } from './fa/fa.component';
+import { LogsComponent } from './logs/logs.component'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FaComponent } from './fa/fa.component'
       HangersComponent,
       FYAComponent,
       AirportsComponent,
-      FaComponent
+      FaComponent,
+      LogsComponent
    ],
   imports: [
     BrowserModule,
