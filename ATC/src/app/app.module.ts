@@ -12,7 +12,9 @@ import { HangersComponent } from './Hangers/Hangers.component';
 import { FYAComponent } from './FYA/FYA.component';
 import { AirportsComponent } from './airports/airports.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatExpansionModule} from '@angular/material/expansion'
+import {MatExpansionModule} from '@angular/material/expansion';
+import { FaComponent } from './fa/fa.component'
+
 
 @NgModule({
   declarations: [					
@@ -23,7 +25,8 @@ import {MatExpansionModule} from '@angular/material/expansion'
     RegisterComponent,
       HangersComponent,
       FYAComponent,
-      AirportsComponent
+      AirportsComponent,
+      FaComponent
    ],
   imports: [
     BrowserModule,
