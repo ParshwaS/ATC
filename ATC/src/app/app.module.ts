@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { FaComponent } from './fa/fa.component';
 import {AuthService} from './auth.service'
+import { LogsComponent } from './logs/logs.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {AuthService} from './auth.service'
       HangersComponent,
       FYAComponent,
       AirportsComponent,
-      FaComponent
+      FaComponent,
+      LogsComponent
    ],
   imports: [
     BrowserModule,
