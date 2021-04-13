@@ -9,15 +9,19 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HangersComponent } from './Hangers/Hangers.component';
+import { FYAComponent } from './FYA/FYA.component';
+import { AirportsComponent } from './airports/airports.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [					
     AppComponent,
     DashboardComponent,
     NavigationComponent,
     LoginComponent,
     RegisterComponent,
-      HangersComponent
+      HangersComponent,
+      FYAComponent,
+      AirportsComponent
    ],
   imports: [
     BrowserModule,

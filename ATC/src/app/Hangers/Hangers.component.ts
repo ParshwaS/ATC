@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-Hangers',
@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HangersComponent implements OnInit {
 
-  constructor() { }
+  Hangers: any = [];
+  constructor(private ref: ChangeDetectorRef) { }
 
   ngOnInit() {
+    fetch('http://localhost:3000/api/hangers/dashboard').then(res => res.json()).then((doc) => {
+        if(!doc.status){
+          return;
+        }
+        this.Hangers = doc.response[0];
+        this.ref.detectChanges();
+        console.log(doc);
+        console.log(this.Hangers)
+      })
+    setInterval(()=>{
+      fetch('http://localhost:3000/api/hangers/dashboard').then(res => res.json()).then((doc) => {
+        if(!doc.status){
+          return;
+        }
+        this.Hangers = doc.response[0];
+        this.ref.detectChanges();
+      })
+    },5000)
   }
 
 }
