@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto pl-3 mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="/">Dashboard</a>
+            <a class="nav-link text-light" aria-current="page" [routerLink]="'/'" [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="'active'">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="/airports">Airports</a>
+            <a class="nav-link text-light" [routerLink]="'/airports'" [routerLinkActive]="'active'">Airports</a>
           </li>
         </ul>
         <div class="d-flex" style="column-gap: 1rem;">

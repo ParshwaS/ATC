@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HangersComponent } from './Hangers/Hangers.component';
 import { FYAComponent } from './FYA/FYA.component';
 import { AirportsComponent } from './airports/airports.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion'
 
 @NgModule({
   declarations: [					
@@ -26,7 +28,9 @@ import { AirportsComponent } from './airports/airports.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

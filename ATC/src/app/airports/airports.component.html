@@ -1,3 +1,31 @@
-<p>
-  airports works!
-</p>
+<div class="container mt-5 mb-5">
+  <h1 class="mb-5 text-center">Airports</h1>
+
+  <p style="cursor: pointer;" (click)="this.showAdd = !this.showAdd"><i class="fa fa-plus"></i> Add New</p>
+  
+   <div *ngIf="showAdd" class="mt-2 mb-3 d-flex justify-content-start align-items-center add-form">
+    <input placeholder="Code" [(ngModel)]="AddFormCode"><input placeholder="Name" [(ngModel)]="AddFormName"><input placeholder="Country" [(ngModel)]="AddFormCountry"><input placeholder="City" [(ngModel)]="AddFormCity">
+    <button class="btn btn-outline-success" (click)="HandleAddAirport()">Add</button>
+   </div>
+  <table id="example" class="mt-3 mb-5 table table-striped table-bordered" style="width:100%">
+      
+    <thead>
+      <tr>
+        <th>Airport Code</th>
+        <th>Airport Name</th>
+        <th>Country</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let airport of Airports">
+        <td>{{airport.airport_code}}</td>
+        <td>{{airport.name}}</td>
+        <td>{{airport.country}}</td>
+        <td>{{airport.city}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
