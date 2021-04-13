@@ -1,7 +1,7 @@
 module.exports = (app, conn)=>{
 
     app.get('/flights/yetToArrive', (req,res)=>{
-        conn.query("SELECT * FROM flights WHERE ETD >= NOW();", (error, response)=>{
+        conn.query("SELECT * FROM flights WHERE ETA >= NOW();", (error, response)=>{
             if(!error)
                 res.json({status: true, response});
             else
