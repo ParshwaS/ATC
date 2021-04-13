@@ -5,16 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import { HangersComponent } from './Hangers/Hangers.component';
 
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
     DashboardComponent,
-    NavigationComponent
-  ],
+    NavigationComponent,
+    LoginComponent,
+    RegisterComponent,
+      HangersComponent
+   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

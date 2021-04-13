@@ -12,4 +12,11 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  HandleLogin():any{
+    window.location.href="/login"
+  }
+  HandleRegister():any{
+    window.location.href="/register"
+  }
+
 }
