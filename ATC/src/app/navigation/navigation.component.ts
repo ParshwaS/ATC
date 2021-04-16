@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
-  constructor() { }
+  log: any = false;
+  constructor(private authService: AuthService, private chref: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.authService.isLoggedIn();
+    this.authService.loginStatus.subscribe((stat)=>{
+      this.log = stat;
+      this.chref.detectChanges();
+    })
   }
 
   HandleLogin():any{
@@ -17,6 +23,11 @@ export class NavigationComponent implements OnInit {
   }
   HandleRegister():any{
     window.location.href="/register"
+  }
+
+  HandleLogout() {
+    this.authService.logout();
+    window.location.href="/login"
   }
 
 }

@@ -3,6 +3,48 @@
         <app-Hangers></app-Hangers>
     </div>
     <div class="col-12 mt-3 mb-5">
+        <div class="offset-md-2">
+            <p style="cursor: pointer;" (click)="this.showAdd = !this.showAdd"><i class="fa fa-plus"></i> Add New</p>
+
+            <div *ngIf="showAdd" class="mt-2 mb-3 d-flex justify-content-start align-items-center add-form">
+                <input placeholder="Flight Name" [(ngModel)]="flight.flight_name">
+                <select [(ngModel)]="flight.from_airport">
+                    <option *ngFor="let item of airports" value="{{item.airport_code}}">
+                        {{item.airport_code}}
+                    </option>
+                </select>
+                <select [(ngModel)]="flight.to_airport">
+                    <option *ngFor="let item of airports" value="{{item.airport_code}}">
+                        {{item.airport_code}}
+                    </option>
+                </select>
+                <input placeholder="ETA" type="datetime-local" [(ngModel)]="flight.ETA" [min]="curTime">
+                <input placeholder="ETD" type="datetime-local" [(ngModel)]="flight.ETD" [min]="curTime">
+                <select [(ngModel)]="flight.runway_a">
+                    <option *ngFor="let item of runways" value="{{item.runway_code}}">
+                        {{item.runway_code}}
+                    </option>
+                </select>
+                <select [(ngModel)]="flight.runway_b">
+                    <option *ngFor="let item of runways" value="{{item.runway_code}}">
+                        {{item.runway_code}}
+                    </option>
+                </select>
+                <select [(ngModel)]="flight.hanger">
+                    <option *ngFor="let item of hangers" value="{{item.hanger_code}}">
+                        {{item.hanger_code}}
+                    </option>
+                </select>
+                <select [(ngModel)]="flight.TTF">
+                    <option value="00:03:00">3 min</option>
+                    <option value="00:05:00">5 min</option>
+                    <option value="00:10:00">10 min</option>
+                    <option value="00:15:00">15 min</option>
+                    <option value="00:17:00">17 min</option>
+                </select>
+                <button class="btn btn-outline-success" (click)="insertFlight()">Add</button>
+            </div>
+        </div>
         <app-FYA></app-FYA>
     </div>
     <div class="col-12 mt-3 mb-5 pb-5">

@@ -16,7 +16,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { FaComponent } from './fa/fa.component';
 import {AuthService} from './auth.service'
 import { LogsComponent } from './logs/logs.component'
-
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from './authGuard.service';
+import { LoginGuardService } from './loginGuard.service';
 
 @NgModule({
   declarations: [					
@@ -35,10 +38,12 @@ import { LogsComponent } from './logs/logs.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
+    ToastrModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService, LoginGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

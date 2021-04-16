@@ -17,7 +17,7 @@ export class FaComponent implements OnInit {
     
     fetch('http://localhost:3000/api/flights/parked').then(res => res.json()).then(doc => {
       if(doc.status){
-        this.FA = doc.response;
+        this.FA = doc.response[0];
         this.ref.detectChanges();
 
         this.table = $('#example1').DataTable({

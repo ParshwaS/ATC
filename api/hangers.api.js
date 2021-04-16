@@ -10,6 +10,15 @@ module.exports = (app, conn)=>{
         });
     });
 
+    app.get('/hangers/list', (req,res)=>{
+        conn.query("SELECT * FROM hangers WHERE is_usable=TRUE;", (error, response)=>{
+            if(!error)
+                res.json({status: true, response});
+            else
+                res.json({status: false, error});
+        });
+    })
+
     app.get('/hangers/dashboard', (req,res)=>{
         conn.query("CALL hanger_list_with_status();", (error, response)=>{
             if(!error)
